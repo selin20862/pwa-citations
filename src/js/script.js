@@ -1,7 +1,46 @@
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('../../service-worker.js').then(function(registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+
+  let deferredPrompt;
+
+ 
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    console.log('beforeinstallprompt fired: '+e);
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    showInstallPromotion();
+  });
+
+  function showInstallPromotion() {
+    console.log('Ok on peut installer');
+    $('#install').show();
+  }   
+
 $( document ).ready(function() {
     
     
-
+    $('#install').click(function() {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the install prompt');
+            } else {
+              console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+          });
+        }
+      });
 
 
 

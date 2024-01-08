@@ -1,11 +1,11 @@
 // service-worker.js
 var CACHE_NAME = 'my-pwa-cache-v1';
 var urlsToCache = [
-    '/dist/index.html',
-    '/dist/css/style.min.css',
-    '/dist/js/script.min.js',
-    '/dist/js/code.jquery-3.7.1.min.js',
-    '/src/img/loop.png'
+    './index.html',
+    './css/style.min.css',
+    './js/script.min.js',
+    './js/code.jquery-3.7.1.min.js',
+    './../src/img/loop.png'
 ];
 
 
