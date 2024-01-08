@@ -24,7 +24,7 @@ gulp.task('renameHTML', function () {
         .pipe(replace(/\.css/g, '.min.css'))
         .pipe(replace(/\.(jpg|png)/g, '.webp'))
         .pipe(cheerio($ => {
-            $('script[src!="service-worker.js"]').each((index, element) => {
+            $('script[src!="../service-worker.js"]').each((index, element) => {
               const src = $(element).attr('src');
               if (src && src.endsWith('.js')) {
                 $(element).attr('src', src.replace(/\.js$/, '.min.js'));
