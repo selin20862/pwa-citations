@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap');
+@import '../../node_modules/tailwindcss/base.css';
+@import '../../node_modules/tailwindcss/components.css';
+@import '../../node_modules/tailwindcss/utilities.css';
+
+body {
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+button, h1, h2 {
+    color: white;
+}
+
+p {
+    color: darkgrey
+}
+
+h2 {
+    font-style: italic;
+}
