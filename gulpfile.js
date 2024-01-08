@@ -26,6 +26,6 @@ gulp.task('renameHTML', function () {
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('build', gulp.series('webp', 'minify-js', 'renameHTML'));
+gulp.task('default', gulp.series('webp', 'minify-js', 'renameHTML'));
 
 
